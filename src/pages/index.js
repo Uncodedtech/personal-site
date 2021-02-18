@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -9,8 +10,15 @@ import Hero from "../components/Hero";
 import PreferPaper from "../components/PreferPaper";
 import { CardText } from "../templates/articles";
 import { Card } from "../templates/projects";
+import queryString from "query-string";
 
-function IndexPage({ data }) {
+function IndexPage({ data, location, foundTheme }) {
+
+  const { t } = queryString.parse(location.search);
+  if(t==="gimmeatheme"){
+    foundTheme("Diet Purple");
+  }
+
   return (
     <Layout>
       <SEO
@@ -177,4 +185,15 @@ export const query = graphql`{
 }
 `;
 
-export default IndexPage;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    foundTheme: (theme) => dispatch({ type: "foundTheme", data: theme }),
+  };
+};
+
+const ConnectedIndexPage =
+  typeof window !== `undefined`
+    ? connect(null, mapDispatchToProps)(IndexPage)
+    : IndexPage;
+
+export default ConnectedIndexPage;

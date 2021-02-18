@@ -15,7 +15,7 @@ const ThemeFound = ({ newTheme, setTheme, dismissNewTheme }) => {
       {modalOpen && (
         <div
           className="bg-modal fixed top-0 right-0 w-full h-full flex items-center justify-center"
-          style={{ zIndex: 1000 }}
+          style={{ zIndex: 2000 }}
         >
           <div
             className="w-auto h-auto bg-default text-secondary rounded-lg p-8  border-4 border-accent"

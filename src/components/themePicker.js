@@ -4,17 +4,17 @@ import ReactTooltip from "react-tooltip";
 
 export const lightThemes = new Set(["Blue", "Rhubarb and Custard"]);
 export const darkThemes = new Set(["Midnight Dreams", "Apocalypse"]);
-export const unlockables = new Set(["Fall Guys", "Matrix"]);
+export const unlockables = new Set(["Fall Guys", "Matrix", "Diet Purple"]);
 const themes = new Set([...darkThemes, ...lightThemes]);
 const allThemes = [...lightThemes, ...darkThemes, ...unlockables];
 
 const ThemePicker = ({ theme, setTheme, unlockedThemes, small }) => {
   const unlocked = new Set(unlockedThemes);
   const fontSize = small ? "text-sm" : "text-md";
-  console.log(theme)
   return (
     <div className="flex m-auto md:m-0">
       <ReactTooltip />
+      <div className="grid grid-cols-5 sm:grid-cols-7 gap-2">
       {allThemes.map((item, index) => {
         const themeVal = item.toLowerCase().replace(/ /g, '');
         if (themes.has(item) || (unlockables.has(item) && unlocked.has(item))) {
@@ -22,9 +22,7 @@ const ThemePicker = ({ theme, setTheme, unlockedThemes, small }) => {
             <div key={item} className={`theme-${themeVal}`}>
               <button
                 aria-label={`Theme ${item}`}
-                className={`h-10 w-8 my-1 ${
-                  index !== allThemes.length ? "mr-4" : ""
-                } transition duration-500  ease-in-out transform  ${
+                className={`h-10 w-8 transition duration-500  ease-in-out transform  ${
                   theme === `theme-${themeVal}` ? "" : "hover:scale-110"
                 }`}
                 onClick={() => setTheme(`theme-${themeVal}`)}
@@ -68,9 +66,7 @@ const ThemePicker = ({ theme, setTheme, unlockedThemes, small }) => {
               <button
                 disabled={true}
                 aria-label={`Theme Locked`}
-                className={`h-10 w-8 my-1 ${
-                  index !== allThemes.length ? "mr-4" : ""
-                } transition duration-500  ease-in-out transform opacity-75`}
+                className={`h-10 w-8 transition duration-500  ease-in-out transform opacity-75`}
               >
                 <div
                   data-tip={`Find this theme by exploring the site.`}
@@ -83,6 +79,7 @@ const ThemePicker = ({ theme, setTheme, unlockedThemes, small }) => {
           );
         }
       })}
+    </div>
     </div>
   );
 };

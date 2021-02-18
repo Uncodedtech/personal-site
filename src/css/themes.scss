@@ -214,3 +214,24 @@
         @extend .bulb-special
     }
   }
+
+  .theme-dietpurple {
+    --color-bg-primary: #BC63F8;
+    --color-bg-primary-light: #c676fa;
+    --color-bg-accent: #B5179E; 
+    --color-bg-accent-light: #D91CBC; 
+    --color-bg-secondary: #EED8FD;
+    --color-text-link: #F72585;
+    --color-bg-compliment: #d3d3d340;
+    --color-bg-default: #f5f5ff;
+    --color-bg-inverse: #d77d4d;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #300660;
+    --color-text-default: #303030;
+    --color-text-default-soft: #484848;
+    --color-text-inverse: #fff;
+    --color-text-inverse-soft: #ffffffb3;
+    --color-logo-one: #4CC9F0;
+    --color-logo-two: #ffffff;
+    --color-logo-three: #F72585;
+}
