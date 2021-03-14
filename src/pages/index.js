@@ -81,6 +81,7 @@ function IndexPage({ data }) {
           style={{
             zIndex: 10,
             position: "absolute",
+            right:0
           }}
           objectPosition="75% 50%" />
         <div
@@ -162,7 +163,7 @@ export const query = graphql`{
           path
           coverimg {
             childImageSharp {
-              gatsbyImageData(maxWidth: 1000, placeholder: NONE, layout: FLUID)
+              gatsbyImageData(width: 1000)
             }
           }
         }
@@ -171,7 +172,7 @@ export const query = graphql`{
   }
   eventHero: file(relativePath: {eq: "eventHero.png"}) {
     childImageSharp {
-      gatsbyImageData(maxWidth: 1200, placeholder: NONE, layout: FLUID)
+      gatsbyImageData(width: 1200)
     }
   }
 }

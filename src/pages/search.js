@@ -219,7 +219,7 @@ export const query = graphql`{
         path
         coverimg {
           childImageSharp {
-            gatsbyImageData(maxWidth: 1000, placeholder: NONE, layout: FLUID)
+            gatsbyImageData(width: 1000)
           }
         }
       }
@@ -237,7 +237,7 @@ export const query = graphql`{
         path
         coverimg {
           childImageSharp {
-            gatsbyImageData(maxWidth: 1000, placeholder: NONE, layout: FLUID)
+            gatsbyImageData(width: 1000)
           }
         }
       }

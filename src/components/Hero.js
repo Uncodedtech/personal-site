@@ -66,29 +66,17 @@ const Hero = () => {
             {
               HeroBody: file(relativePath: { eq: "Body/Thinking.png" }) {
                 childImageSharp {
-                  gatsbyImageData(
-                    maxWidth: 230
-                    placeholder: NONE
-                    layout: FLUID
-                  )
+                  gatsbyImageData(width: 230)
                 }
               }
               HeroTorso: file(relativePath: { eq: "Torso/Thinking.png" }) {
                 childImageSharp {
-                  gatsbyImageData(
-                    maxWidth: 230
-                    placeholder: NONE
-                    layout: FLUID
-                  )
+                  gatsbyImageData(width: 230)
                 }
               }
               Bulb: file(relativePath: { eq: "Item/Bulb.png" }) {
                 childImageSharp {
-                  gatsbyImageData(
-                    maxWidth: 52
-                    placeholder: NONE
-                    layout: FLUID
-                  )
+                  gatsbyImageData(width: 52)
                 }
               }
             }

@@ -17,14 +17,16 @@ const Project = ({ data }) => {
         socialcard={fields.socialcard}
         video={`${replaceAll("/", "-", frontmatter.path.slice(1))}.mp4`}
       />
+      <div className="relative md:max-w-4xl mx-auto md:mt-5 ">
       <GatsbyImage
         image={frontmatter.coverimg.childImageSharp.gatsbyImageData}
-        className="w-full h-full md:max-w-4xl mx-auto md:mt-5 md:rounded"
+        className="w-full h-full md:rounded"
         style={{
           maxHeight: 400,
         }}
         objectPosition="50% 50%"
       />
+      </div>
 
       <div className="flex-1 w-full max-w-4xl px-4 py-8 mx-auto md:px-8 md:py-16 prose text-secondary">
         <h1 className="text-center">{frontmatter.title}</h1>
@@ -51,7 +53,7 @@ export const pageQuery = graphql`
         desc
         coverimg {
           childImageSharp {
-            gatsbyImageData(maxWidth: 1200, placeholder: NONE, layout: FLUID)
+            gatsbyImageData(width: 1200)
           }
         }
       }

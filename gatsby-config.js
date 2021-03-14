@@ -110,8 +110,8 @@ module.exports = {
     // TRANSFORMER PLUGINS
     `gatsby-plugin-image`,
     `gatsby-plugin-mdx-embed`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-remark-images`,
 
     {

@@ -114,7 +114,7 @@ export const query = graphql`
           location
           hero {
             childImageSharp {
-              gatsbyImageData(maxWidth: 1000, placeholder: NONE, layout: FLUID)
+              gatsbyImageData(width: 1000)
             }
           }
         }

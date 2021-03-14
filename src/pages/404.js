@@ -79,7 +79,7 @@ export const pageQuery = graphql`
   {
     Hero: file(relativePath: { eq: "404Hero.png" }) {
       childImageSharp {
-        gatsbyImageData(maxWidth: 800, placeholder: NONE, layout: FLUID)
+        gatsbyImageData(width: 800)
       }
     }
     allSitePage(

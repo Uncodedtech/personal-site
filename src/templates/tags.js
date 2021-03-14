@@ -124,7 +124,7 @@ export const pageQuery = graphql`query ($tag: String) {
           tags
           coverimg {
             childImageSharp {
-              gatsbyImageData(maxWidth: 400, placeholder: NONE, layout: FLUID)
+              gatsbyImageData(width: 400)
             }
           }
         }

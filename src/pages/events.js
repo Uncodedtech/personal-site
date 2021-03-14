@@ -9,7 +9,7 @@ import Events from "../data/events.json";
 import isFuture from "date-fns/isFuture";
 import parse from "date-fns/parse";
 import format from "date-fns/format";
-import Timeline from "../data/timeline.json"
+import Timeline from "../data/timeline.json";
 const currentJob = Timeline[0];
 
 const EventBlock = ({ events, setVideoModalVisibility }) => {
@@ -127,6 +127,7 @@ const EventsPage = ({ data }) => {
           style={{
             zIndex: 10,
             position: "absolute",
+            right: 0,
           }}
           objectPosition="75% 50%"
         />
@@ -158,10 +159,10 @@ const EventsPage = ({ data }) => {
           </div>
           <div className="col-span-4 md:col-span-3">
             <h3>
-              Sam currently works as a {currentJob.role} at {currentJob.company}. He has
-              built new ways to refer friends, onboarding experiences and rapid
-              response systems. He enjoys teaching the next generation to code
-              through his articles, presentations and at hackathons.
+              Sam currently works as a {currentJob.role} at {currentJob.company}
+              . He has built new ways to refer friends, onboarding experiences
+              and rapid response systems. He enjoys teaching the next generation
+              to code through his articles, presentations and at hackathons.
             </h3>
             <div className="text-center md:text-left">
               <OutboundLink href={data.face.publicURL}>
@@ -216,13 +217,13 @@ export const query = graphql`
   {
     eventHero: file(relativePath: { eq: "eventHero.png" }) {
       childImageSharp {
-        gatsbyImageData(maxWidth: 1200, placeholder: NONE, layout: FLUID)
+        gatsbyImageData(width: 1200)
       }
     }
     face: file(relativePath: { eq: "face.png" }) {
       publicURL
       childImageSharp {
-        gatsbyImageData(maxWidth: 400, placeholder: NONE, layout: FLUID)
+        gatsbyImageData(width: 400)
       }
     }
   }

@@ -103,12 +103,12 @@ function AboutPage() {
             }
             HeroBody: file(relativePath: { eq: "Body/Floats.png" }) {
               childImageSharp {
-                gatsbyImageData(maxWidth: 230, placeholder: NONE, layout: FLUID)
+                gatsbyImageData(width: 230)
               }
             }
             Face: file(relativePath: { eq: "face.png" }) {
               childImageSharp {
-                gatsbyImageData(maxWidth: 230, placeholder: NONE, layout: FLUID)
+                gatsbyImageData(width: 400)
               }
             }
           }
@@ -117,15 +117,15 @@ function AboutPage() {
           <>
             <section className="text-secondary bg-default  -mb-32 md:-mb-64">
               <div className="flex-1 w-full max-w-4xl px-4 py-6 mx-auto md:px-8 md:pb-16">
-                <div className="w-64 md:w-6/12 m-auto relative">
+                <div className="w-64 h-64 mb-6 md:mb-12 md:w-96 md:h-96 m-auto relative">
                   <GatsbyImage
                     image={data.Face.childImageSharp.gatsbyImageData}
+                    className="w-full h-full"
                   />
-                  <div className="w-2/5 md:w-56 ml-auto -mt-24 md:-mt-64 -mr-8 md:-mr-32 float-y">
-                    <GatsbyImage
-                      image={data.HeroBody.childImageSharp.gatsbyImageData}
-                    />
-                  </div>
+                  <GatsbyImage
+                    image={data.HeroBody.childImageSharp.gatsbyImageData}
+                    className="w-2/5 -mr-12 absolute right-0 bottom-0 float-y"
+                  />
                 </div>
               </div>
             </section>
