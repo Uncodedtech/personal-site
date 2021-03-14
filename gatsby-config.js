@@ -331,6 +331,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    // `gatsby-plugin-gatsby-cloud` ready for v3 upgrade
+    `gatsby-plugin-gatsby-cloud`
   ].concat(dynamicPlugins),
 };
